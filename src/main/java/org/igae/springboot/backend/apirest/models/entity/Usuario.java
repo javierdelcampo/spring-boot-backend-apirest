@@ -33,7 +33,7 @@ public class Usuario implements Serializable {
 	private Boolean enabled;
 	
 	private String nombre;
-	private String apellidos;
+	private String apellido;
 	
 	@Column(unique = true)
 	private String email;
@@ -42,7 +42,7 @@ public class Usuario implements Serializable {
 	@JoinTable(name="usuarios_roles", joinColumns= @JoinColumn(name="usuario_id"),
 	inverseJoinColumns=@JoinColumn(name="role_id"),
 	uniqueConstraints= {@UniqueConstraint(columnNames= {"usuario_id", "role_id"})})
-	private List<Rol> roles;
+	private List<Role> roles;
 
 	public Long getId() {
 		return id;
@@ -76,11 +76,11 @@ public class Usuario implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public List<Rol> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<Rol> roles) {
+	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
 
@@ -92,12 +92,12 @@ public class Usuario implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public String getApellidos() {
-		return apellidos;
+	public String getApellido() {
+		return apellido;
 	}
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 
 	public String getEmail() {

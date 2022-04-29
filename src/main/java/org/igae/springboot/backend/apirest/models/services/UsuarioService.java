@@ -3,6 +3,8 @@ package org.igae.springboot.backend.apirest.models.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.igae.springboot.backend.apirest.models.dao.IUsuarioDao;
+import org.igae.springboot.backend.apirest.models.entity.Usuario;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +16,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import org.igae.springboot.backend.apirest.models.dao.IUsuarioDao;
-import org.igae.springboot.backend.apirest.models.entity.Usuario;
 
 @Service
 public class UsuarioService implements IUsuarioService, UserDetailsService{
